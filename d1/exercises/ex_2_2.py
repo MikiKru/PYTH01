@@ -5,6 +5,7 @@ chyba, że są wielokrotnościami 400 (te są przestępne)
 """
 
 year = int(input("Wprowadź rok"))
-is_leap_year = year % 400 == 0 or year % 100 != 0 and year % 4 == 0
+# is_leap_year = year % 400 == 0 or year % 100 != 0 and year % 4 == 0
+is_leap_year = year % 4 == 0 and (year % 400 == 0 or year % 100 != 0)
 
 print(f"Czy rok {year} jest przestępny? {is_leap_year}")
