@@ -1,7 +1,7 @@
 from random import randint, choices
 
-rndNumber = randint(1, 6)
-print("Wyrzucono: " + str(rndNumber))
+rnd_number = randint(1, 6)
+print("Wyrzucono: " + str(rnd_number))
 
 # statystyki rzutów kostką
 numbers = [1,2,3,4,5,6]
