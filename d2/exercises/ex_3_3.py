@@ -1,3 +1,5 @@
+# SHIFT + TAB -> back TAB
+
 year = int(input("podaj rok"))
 count = 0
 day = 13
