@@ -1,7 +1,8 @@
 # Dozwolone opcje wprowadzania daty
 # YYYY-MM-dd
 # dd.MM.YYYY
-
+day_name_mapper = ("nd", 'pon', 'wt', 'śr', 'czw', 'pt', 'so')
+# day_name_mapper = (("nd", "sun", "."), 'pon', 'wt', 'śr', 'czw', 'pt', 'so') + internacjonalizacja
 while True:
     date = input("Wprowadź datę w jednym z formatów: YYYY-MM-dd lub dd.MM.YYYY")
     if '.' in date:
@@ -26,5 +27,5 @@ while True:
         z = year - 1
         c = 0
     day_name_index = (((23 * month) // 9) + day + 4 + year + (z // 4) - (z // 100) + (z // 400) - c) % 7
-    print(day_name_index)
+    print(day_name_index, day_name_mapper[day_name_index])
     break
