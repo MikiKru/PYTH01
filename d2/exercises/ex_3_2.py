@@ -4,10 +4,13 @@
 
 while True:
     date = input("Wprowadź datę w jednym z formatów: YYYY-MM-dd lub dd.MM.YYYY")
-    ???
-    year = ?
-    month = ?
-    day = ?
+    if '.' in date:
+        day, month, year = date.split(".")
+    else:
+        year, month, day = date.split("-")
+    year = int(year)
+    month = int(month)
+    day = int(day)
     if (year < 0):
         print("błędny rok")
         continue
