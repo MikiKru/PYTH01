@@ -1,0 +1,20 @@
+from d3.functions import *
+
+welcome()
+welcome()
+welcome()
+welcome_me("Michał")
+print(one())
+print(addition(1, 2))
+print(subtraction(num2=1, num1=2))
+print(subtraction(1, 2))
+print(divsion(1,3))
+f(1)
+f(x=1, b=3)
+
+fun(1, 1,2,3)
+fun(2)
+fun(2, 3,4,5,5,6)
+print("############")
+fun3(5)
+fun3(5, a=2,b=3,c=4)
