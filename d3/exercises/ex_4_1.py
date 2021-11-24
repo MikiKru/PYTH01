@@ -28,5 +28,5 @@ def date_valid():
             break
         except:
             print("Błąd daty")
-date_valid()
+
 
