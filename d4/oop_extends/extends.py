@@ -2,18 +2,18 @@ class Example:
     def __init__(self):
         print("Konstruktor klasy Example")
 class Software(Example):
-    def __init__(self, soft_name, soft_language):
+    def __init__(self, name, language):
         super().__init__()
         print("Konstruktor klasy Software")
-        self.name = soft_name
-        self.language = soft_language
+        self.name = name
+        self.language = language
     def __str__(self):
         return f"name = {self.name} language = {self.language}"
 
 class Course(Software):
-    def __init__(self, course_name, course_language, course_price):
-        super().__init__(course_name, course_language)      # musi byćpierwszą linią metody
-        self.price = course_price
+    def __init__(self, name, language, price):
+        super().__init__(name, language)      # musi byćpierwszą linią metody
+        self.price = price
         print("Konstruktor klasy Course")
     def __str__(self):
         return f"{super().__str__()} price = {self.price}"
