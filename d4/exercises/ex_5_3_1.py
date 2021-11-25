@@ -1,4 +1,9 @@
 from datetime import date
+# Klasa modelu - determinuje strukture danych
+# 1. prywatne pola
+# 2. publiczne metody dostępowe
+# 3. konstruktor -> nie ma przeciążania
+# 4. str -> interfejs
 
 class Osoba:
     def __init__(self, imie : str, nazwisko : str,  rok_urodzenia : int, plec : bool):
@@ -46,3 +51,4 @@ o.plec = False
 o.rok_urodzenia += 5
 print(o.rok_urodzenia)
 print(o)
+print(Osoba.__bases__)
