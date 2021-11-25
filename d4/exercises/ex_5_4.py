@@ -31,7 +31,12 @@ class Manager(Employee):
     def add_employee(self, employee):
         self.__emploees.append(employee)
     def remove_employee_by_index(self, index):
-        self.__emploees.remove(index)
+        try:
+            self.__emploees.remove(self.__emploees[index])
+        except:
+            print("Błędny index!")
+    def sort_employees_by_salary(self, direction):
+        pass
 
 
 e1 = Employee("Adam", "Kowalski", 10_000.50)
@@ -41,4 +46,5 @@ m = Manager("Jan","Nowak", 14_000)
 m.add_employee(e1)
 m.add_employee(e2)
 m.add_employee(e3)
+m.remove_employee_by_index(1)
 print(m)
