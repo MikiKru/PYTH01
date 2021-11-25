@@ -10,6 +10,7 @@ class Calc:
     def get_digit(self):
         return self.__digit
     def set_digit(self, digit : int):
+        print("setter digit")
         if digit < 0:
             self.__digit = 0
         elif digit > 9:
@@ -24,3 +25,9 @@ print(c1, c1.get_digit())
 c1.number = 10              # bezpośrednio
 c1.set_number(9)            # przez metodę
 print(c1)
+c1.set_digit(5)
+# c1.__digit = 3
+# c1.email = 444
+print(c1)
+c1.set_number(c1.get_number() * 2)
+
