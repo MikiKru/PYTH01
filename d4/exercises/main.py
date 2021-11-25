@@ -1,6 +1,8 @@
-from d4.exercises.ex_5_1 import Osoba
+from d4.exercises.ex_5_2 import Osoba
 
 o = Osoba("M","M",2000,True)
 print(o)
-print(o.__eq__(o))
-print(o == o)
+o.ustaw_imie("Michał")
+print(o.wypisz_imie())
+
+
