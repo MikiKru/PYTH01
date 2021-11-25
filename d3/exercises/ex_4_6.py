@@ -34,3 +34,4 @@ def date_valid() -> None:
             print("Błąd daty")
 
 date_valid()
+# map_index_to_day("xxx") - type error
