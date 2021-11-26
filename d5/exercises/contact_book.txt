@@ -1,0 +1,3 @@
+Adam;Kowalski;Królewska 20;00-000;Warszawa
+Anna;Kowalska;Królewska 20;00-000;Warszawa
+Jan;Nowak;Nowa 5;02-100;Wrocław
