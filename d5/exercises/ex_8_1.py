@@ -60,16 +60,20 @@ def valid_data():
         o1 = Osoba(name,last_name, rok_urodzenia, gender)
         print(o1)
 
-    except AttributeError as ar:
+    except NoValueError as ar:
         print(ar)
         print("imię i nazwisko nie może być puste")
     except NameError as ne:
         print(ne)
         print("błędny wydór płci")
-    except TypeError as te:
+    except BirthDateError as bde:
+        print(bde)
+        print("błędna data urodzenia - zbyt duża wartość roku urodzenia")
+    except (TypeError, ValueError) as te:
         print(te)
-        print("błędny wiek")
+        print("błędny wiek - nie da się skonwertować na liczbę")
     else:
         print("utworzono obiekt")
 
 valid_data()
+print("dalej działam!!!")
