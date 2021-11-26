@@ -36,15 +36,34 @@ class Manager(Employee):
         except:
             print("Błędny index!")
     def sort_employees_by_salary(self, direction):
-        pass
+        i = 0                                   # max n - 1 iteracji
+        j = 0
+        while i < len(self.__emploees):
+            while j < len(self.__emploees) - 1:
+                if direction:
+                    if (self.__emploees[j].get_salary() > self.__emploees[j + 1].get_salary()):
+                        e = self.__emploees[j]
+                        self.__emploees[j] = self.__emploees[j + 1]
+                        self.__emploees[j + 1] = e
+                    j += 1
+                else:
+                    if (self.__emploees[j].get_salary() < self.__emploees[j + 1].get_salary()):
+                        e = self.__emploees[j]
+                        self.__emploees[j] = self.__emploees[j + 1]
+                        self.__emploees[j + 1] = e
+                    j += 1
+            i += 1
 
 
-e1 = Employee("Adam", "Kowalski", 10_000.50)
+e1 = Employee("Adam", "Kowalski", 16_000.50)
 e2 = Employee("Janusz", "Nowak", 10_000.50)
-e3 = Employee("Anna", "Kowalska", 10_000.50)
-m = Manager("Jan","Nowak", 14_000)
+e3 = Employee("Anna", "Kowalska", 12_000.50)
+e4 = Employee("Ala", "Kowalska", 12_000.50)
+m = Manager("Jan","Nowak", 24_000)
 m.add_employee(e1)
 m.add_employee(e2)
 m.add_employee(e3)
-m.remove_employee_by_index(1)
+m.add_employee(e4)
+# m.remove_employee_by_index(1)
+m.sort_employees_by_salary(False)
 print(m)
