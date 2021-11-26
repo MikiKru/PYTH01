@@ -25,6 +25,9 @@ def read_pople_from_book():
             temp_people.append(p)
     return temp_people
 
+
 write_people_to_book(people)
 for p in read_pople_from_book():
     print(p, end="")
+
+print(eval("2+3"))
