@@ -1,5 +1,12 @@
 from datetime import date
 
+class NoValueError(Exception):
+    def __init__(self):
+        print("Zgłoszono wyjątek " + self.__class__.__name__)
+
+class BirthDateError(Exception):
+    def __init__(self):
+        print("Zgłoszono wyjątek " + self.__class__.__name__)
 
 class Osoba:
     def __init__(self, imie : str, nazwisko : str,  rok_urodzenia : int, plec : bool):
@@ -34,31 +41,35 @@ class Osoba:
     plec = property(__wypisz_plec, __ustaw_plec)
     rok_urodzenia = property(__wypisz_rok_urodzenia, __ustaw_rok_urodzenia)
 
-try:
-    name = input("podaj imie")
-    last_name = input("podaj nazwisko")
-    rok_urodzenia = int(input("podaj wiek"))
-    gender = input("podaj płeć (M/K)")
-    if name == "" or last_name == "":
-        raise AttributeError
-    if gender == "M":
-        gender = True
-    elif gender == "K":
-        gender = False
+def valid_data():
+    try:
+        name = input("podaj imie")
+        last_name = input("podaj nazwisko")
+        rok_urodzenia = int(input("podaj rok urodzenia"))
+        gender = input("podaj płeć (M/K)")
+        if name == "" or last_name == "":
+            raise NoValueError
+        if gender == "M":
+            gender = True
+        elif gender == "K":
+            gender = False
+        else:
+            raise NameError
+        if rok_urodzenia > date.today().year:
+            raise BirthDateError
+        o1 = Osoba(name,last_name, rok_urodzenia, gender)
+        print(o1)
+
+    except AttributeError as ar:
+        print(ar)
+        print("imię i nazwisko nie może być puste")
+    except NameError as ne:
+        print(ne)
+        print("błędny wydór płci")
+    except TypeError as te:
+        print(te)
+        print("błędny wiek")
     else:
-        raise NameError
-    if rok_urodzenia > date.today().year:
-        raise TypeError
-    o1 = Osoba(name,last_name, rok_urodzenia, gender)
-    print(o1)
+        print("utworzono obiekt")
 
-except AttributeError as ar:
-    print(ar)
-    print("imię i nazwisko nie może być puste")
-except NameError as ne:
-    print(ne)
-    print("błędny wydór płci")
-except TypeError as te:
-    print(te)
-    print("błędny wiek")
-
+valid_data()
