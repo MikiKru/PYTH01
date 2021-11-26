@@ -7,7 +7,7 @@ def read_files(file_name1, file_name2):
             print(line.strip())
 
 def read_files2(file_name1, file_name2):
-    with open(file_name1, mode='r') as f1, open(file_name2, mode='r') as f2:
+    with open(file_name1, mode='r', encoding="utf-8") as f1, open(file_name2, mode='r', encoding="utf-8") as f2:
         f1_content = f1.readlines()
         f2_content = f2.readlines()
         if len(f1_content) > len(f2_content):
